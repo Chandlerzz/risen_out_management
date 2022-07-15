@@ -36,10 +36,9 @@
         @confirm="onConfirm"
       />
     </div>
-    <div>
-      <van-button round type="primary" @click="Clear()">清除筛选</van-button>
-      <van-button round type="info" @click="Submit(), (shows = false)"
-        >确认</van-button
+    <div class="confirm">
+      <van-button round type="primary" @click="clear()">清除筛选</van-button>
+      <van-button round type="info" @click="submit()" >确认</van-button
       >
     </div>
   </van-action-sheet>
@@ -94,10 +93,25 @@ export default {
       this.showCalendar = false;
       this.form.outDate = this.formatDate(date);
     },
+    clear(){
+      this.form = {};
+    },
+    submit(){
+      this.$emit("close");
+    },
   },
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.confirm{
+  display:flex;
+  justify-content:center;
+  gap:1rem;
+  padding:10px;
+  button{
+    width: 100px;
+  }
+}
 </style>
 

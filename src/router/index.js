@@ -23,6 +23,11 @@ export const constantRoutes = [
     path:"/login",
     name:"login",
     component: (resolve) => require(['@/views/login'], resolve),
+  },
+  {
+    path:"/order/create",
+    name:"orderCreate",
+    component: (resolve) => require(['@/views/order/create'], resolve),
   }
 ]
 

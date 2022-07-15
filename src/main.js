@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import  {Dialog, Button,CellGroup,Cell,Field } from 'vant'
 import {ActionSheet,Col,Row, Icon, Tab, Tabs} from 'vant'
-import {Calendar} from "vant";
+import {Calendar, Radio,RadioGroup} from "vant";
 import router from './router'
 import './assets/styles/index.scss'
 
@@ -21,6 +21,8 @@ Vue.use(Icon)
 Vue.use(Tabs)
 Vue.use(Tab)
 Vue.use(Calendar)
+Vue.use(Radio)
+Vue.use(RadioGroup)
 new Vue({
   router,
   render: h => h(App),
