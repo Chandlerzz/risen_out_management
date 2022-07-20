@@ -11,22 +11,26 @@
       :value="form.productionOrderNo"
     >
     </Input>
-    <TimeOfTruckDeparture></TimeOfTruckDeparture>
+    <Input
+      :label="createTable.timeOfTruckDeparture"
+      :value="form.timeOfTruckDeparture"
+      v-on="$listeners"
+      @click="clickTime"
+    ></Input>
     <Input
       :label="createTable.inspectedBy"
       :value="form.inspectedBy"
-      :disabled="true"
+      v-bind="$attrs"
+      v-on="$listeners"
+      class="van-field--disabled"
     ></Input>
-    <Input
-      :label="createTable.lotNumber"
-      :value="form.inspectedBy"
-      :disabled="true"
-    ></Input>
-    <Radio
+    <Input :label="createTable.lotNumber" :value="form.inspectedBy"></Input>
+
+    <Checkbox
       :label="createTable.electricCurrent"
       :value="form.electricCurrent"
       :options="currentOptions"
-    ></Radio>
+    ></Checkbox>
     <!-- container -->
     <Input
       v-show="mode.shippingMethd === 2"
@@ -67,19 +71,11 @@
       :label="createTable.truckPlateNumber"
       :value="form.truckPlateNumber"
     ></Input>
-    <Input :label="createTable.moduleType">
-      <van-icon
-        name="arrow"
-        size="23"
-        @click="(showPicker = true), clickModule()"
-      />
+    <Input :label="createTable.moduleType" :value="form.moduleType">
+      <van-icon name="arrow" size="23" @click="showPicker = true" />
     </Input>
     <Input :label="createTable.moduleDimension" :value="form.moduleDimension">
-      <van-icon
-        name="arrow"
-        size="23"
-        @click="(showPicker = true), clickModule()"
-      />
+      <van-icon name="arrow" size="23" @click="showPicker = true" />
     </Input>
     <Input
       :label="createTable.numberOfModule"
@@ -135,37 +131,50 @@
       :min-date="form.minDate"
       @confirm="onConfirm"
     />
+    <van-popup v-model="showPicker" round position="bottom">
+      <van-picker
+        title="请选择订单号"
+        show-toolbar
+        :columns="moduleTypeOptions"
+        @confirm="onConfirmPicker"
+        @cancel="showPicker = false"
+      />
+    </van-popup>
   </main>
 </template>
 
 <script>
 import Input from "../../components/input";
 import Radio from "../../components/input/radio";
-import TimeOfTruckDeparture from "./timeOfTruckDeparture";
+import Checkbox from "../../components/input/checkbox";
 import createTable from "@/data/create";
 import currentOptions from "@/data/currentOptions";
 import weatherOptions from "@/data/weatherOptions";
 import moduleStorageOptions from "@/data/moduleStorageOptions";
 import modulePackingOptions from "@/data/modulePackingOptions";
 import installationManualOptions from "@/data/installationManualOptions";
+import moduleTypeOptions from "@/data/moduleTypeOptions";
 import passNg from "@/data/passNg";
 import yesNo from "@/data/yesNo";
 export default {
+  inheritAttrs: false,
   name: "content",
   components: {
     Input,
     Radio,
-    TimeOfTruckDeparture,
+    Checkbox,
   },
   data() {
     return {
-      showCalendar:false,
+      showCalendar: false,
+      showPicker: false,
       createTable: createTable,
       currentOptions: currentOptions,
       weatherOptions: weatherOptions,
       moduleStorageOptions: moduleStorageOptions,
       modulePackingOptions: modulePackingOptions,
       installationManualOptions: installationManualOptions,
+      moduleTypeOptions: moduleTypeOptions,
       passNg: passNg,
       yesNo: yesNo,
       form: {},
@@ -174,6 +183,29 @@ export default {
         language: 0, //both:0 en:2 ch:1
       },
     };
+  },
+  methods: {
+    clickTime() {
+      this.showCalendar = true;
+    },
+    onConfirmPicker(data,index) {
+      console.log(index)
+      const form = this.form
+      if(!form.moduleType)
+      {
+        this.$set(form,'moduleType',data[0])
+      }else{
+        this.$set(form, 'moduleType',`${form.moduleType} \\ ${data[0]}` )
+      }
+      if(!form.moduleDimension)
+      {
+        this.$set(form,'moduleDimension',data[1])
+      }else{
+        this.$set(form, 'moduleDimension',`${form.moduleDimension} \\ ${data[0]}` )
+      }
+
+      this.showPicker = false;
+    },
   },
 };
 </script>

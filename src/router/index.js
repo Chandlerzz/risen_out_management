@@ -28,6 +28,11 @@ export const constantRoutes = [
     path:"/order/create",
     name:"orderCreate",
     component: (resolve) => require(['@/views/order/create'], resolve),
+  },
+  {
+    path:"/order/photoupload",
+    name:"photoupload",
+    component: (resolve) => require(['@/views/order/photoupload'], resolve),
   }
 ]
 

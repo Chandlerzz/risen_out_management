@@ -2,7 +2,10 @@ import Vue from 'vue'
 import App from './App.vue'
 import  {Dialog, Button,CellGroup,Cell,Field } from 'vant'
 import {ActionSheet,Col,Row, Icon, Tab, Tabs} from 'vant'
-import {Calendar, Radio,RadioGroup} from "vant";
+import {Calendar, Radio,RadioGroup,Picker,Popup} from "vant";
+import { Checkbox, CheckboxGroup } from 'vant';
+import { Uploader } from 'vant';
+import { Collapse, CollapseItem } from 'vant';
 import router from './router'
 import './assets/styles/index.scss'
 
@@ -23,6 +26,13 @@ Vue.use(Tab)
 Vue.use(Calendar)
 Vue.use(Radio)
 Vue.use(RadioGroup)
+Vue.use(Picker)
+Vue.use(Popup)
+Vue.use(Checkbox)
+Vue.use(CheckboxGroup)
+Vue.use(Uploader)
+Vue.use(Collapse)
+Vue.use(CollapseItem)
 new Vue({
   router,
   render: h => h(App),

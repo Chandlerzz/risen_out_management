@@ -19,8 +19,6 @@ import Main from './content'
         title: "集装箱出货单新增"
       };
     },
-    
-    
   }
 </script>
 

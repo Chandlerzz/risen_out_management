@@ -29,6 +29,7 @@ header {
   letter-spacing: -0.41px;
   font-weight: 600;
   height: 60px;
+  z-index:1;
   .icon {
     left:10px;
     position:absolute;

@@ -4,7 +4,7 @@
       v-model="value"
       :label="genLabel(label.name,label.name_en)"
       :placeholder="genPlaceHolder(label.name,label.name_en)"
-      :disabled="disabled"
+      @click="onclick"
     >
     <template #right-icon>
         <slot></slot>
@@ -15,6 +15,7 @@
 
 <script>
 export default {
+  inheritAttrs:true,
   name: "input",
   props: {
     label: {
@@ -28,6 +29,9 @@ export default {
     }
   },
   methods:{
+    onclick(){
+      this.$listeners.click();
+    },
     genLabel(a,b){
       return `${a} (${b})`;
     },
