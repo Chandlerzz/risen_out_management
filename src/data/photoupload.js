@@ -1,4 +1,5 @@
 export default{
+  //container
   emptyContainer:{
     name:"空箱",
     name_en:"Empty Container",
@@ -100,5 +101,79 @@ export default{
     name_en:"Seal Number",
     content:"确认铅封锁状态及确认铅封号",
     specification:"①铅封号手机竖拍满屏清晰可见",
+  },
+  //flat
+  flat1:{
+    name:"签收单", 
+    name_en:"",
+    content:"组件型号、数量、重量、附赠产品信息明细核对",
+    specification:"①货物签收单信息需填写完整\n②确定无误后将签收单平放拍照时照片满屏可读"
+  },
+  flat2:{
+    name:"空车车头照片",
+    name_en:"",
+    content:"车牌号核对留档",
+    specification:"①相机横拍正对车头车牌号\n②拍照满屏清晰可见",
+  },
+  flat3:{
+    name:"空车车尾照片",
+    name_en:"",
+    content:"车辆挂号确认检查空车是否存在对货物风险隐患",
+    specification:"①相机横拍正对车头车牌号\n②拍照满屏清晰可见",
+  },
+  
+  flat4:{
+    name:"司机信息(驾驶证)",
+    name_en:"",
+    content:"司机信息确认",
+    specification:"①核对司机信息对司机驾照拍照留底\n②司机驾照拍照时驾照平放相机横拍正对驾照拍照",
+  },
+  flat5:{
+    name:"单箱唛头",
+    name_en:"",
+    content:"对B5纸信息与出货信息一致",
+    specification:"①相机横拍正对平行唛头拍照\n②拍照满屏并且清晰可见",
+  },
+  flat6:{
+    name:"整托",
+    name_en:"",
+    content:"检查每托组件外包装是否异常",
+    specification:"①拍照整托对角位置，整托组件应满屏体现、包装箱“LOGO”需体现",
+  },
+  flat7:{
+    name:"装满车照片(头部左边侧面)",
+    name_en:"",
+    content:"装满货物确认四周是否对货物存在安全隐患",
+    specification:"①满后对车辆平板上货物四角进行拍照,拍照需体现货物照片",
+  },
+  flat8:{
+    name:"装满车照片(头部右边侧面)",
+    name_en:"",
+    content:"装满货物确认四周是否对货物存在安全隐患",
+    specification:"①满后对车辆平板上货物四角进行拍照,拍照需体现货物照片",
+  },
+  flat9:{
+    name:"装满车照片(尾部左侧面)",
+    name_en:"",
+    content:"装满货物确认四周是否对货物存在安全隐患",
+    specification:"①满后对车辆平板上货物四角进行拍照,拍照需体现货物照片",
+  },
+  flat10:{
+    name:"装满车照片(尾部右侧面)",
+    name_en:"",
+    content:"装满货物确认四周是否对货物存在安全隐患",
+    specification:"①满后对车辆平板上货物四角进行拍照,拍照需体现货物照片",
+  },
+  flat11:{
+    name:"合格证",
+    name_en:"",
+    content:"每车司机需带走至项目地出货人员拍照留档方便后续查询",
+    specification:"①合格证、出厂检验报告平放拍照时照片满屏可读\n②合格证、出厂检验报告拍照需完整，不可遮挡",
+  },
+  flat12:{
+    name:"出厂检验报告",
+    name_en:"",
+    content:"每车司机需带走至项目地出货人员拍照留档方便后续查询",
+    specification:"①合格证、出厂检验报告平放拍照时照片满屏可读\n②合格证、出厂检验报告拍照需完整，不可遮挡",
   },
 }
